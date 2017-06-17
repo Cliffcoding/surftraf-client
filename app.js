@@ -5,7 +5,8 @@ $(appReady);
 
 function appReady() {
   getSurfers().then(showSurfers);
-  getBreaks().then(showBreaks)
+  getBreaks().then(showBreaks);
+  modalCall();
   //getSurfers().then(showSurferInfo)
 
 }
@@ -30,6 +31,7 @@ function showSurfers(surfers) {
 }
 
 function showBreaks(breaks) {
+
   const source = $("#break-template").html();
   //console.log(source);
   const template = Handlebars.compile(source);
@@ -38,6 +40,28 @@ function showBreaks(breaks) {
   });
   $('#break-list').append(html);
 }
+
+function modalCall(){
+  $('.modal').modal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      inDuration: 300, // Transition in duration
+      outDuration: 200, // Transition out duration
+      startingTop: '4%', // Starting top style attribute
+      endingTop: '10%', // Ending top style attribute
+    }
+  );
+}
+
+// function showBreaks(break_surfers) {
+//   const source = $("#break_surfers-template").html();
+//   //console.log(source);
+//   const template = Handlebars.compile(source);
+//   const html = template({
+//     break_surfers
+//   });
+//   $('#break-surfers-list').append(html);
+// }
 
 // function showSurfersInfo(surfers){
 // $('#surfer-list').on('click', function() {
@@ -59,18 +83,20 @@ function showBreaks(breaks) {
     console.log($(this).data('id'));
     $clone = $(this).clone( true )
     $('#surfer-info').append($clone);
-    //console.log('hella what. ' + text);
-
-    //alert( "Handler for .click() called." );
   })
+
   $('body').on('click', '.name', function () {
+
     let text = $(this).text();
     console.log($(this).data('id'));
     $('#break-info').append(this);
-    //console.log('hella what. ' + text);
-
-    //alert( "Handler for .click() called." );
   })
+
+  // $('body').on('click', '.name', function () {
+  //   let breakName = $(this).data('name'));
+  //   console.log(breakName);
+  //   $('#break-surfers-info').append(breakName);
+  // })
 
   // Initialize collapse button
  $(".button-collapse").sideNav({
