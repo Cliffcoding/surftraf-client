@@ -30,20 +30,54 @@
         <ul id="surfer-list">
 
         </ul>
+
       </ul>
     </header>
      <main class="container">
       <h3>USER PAGE</h3>
-       <!-- <main>
-          Page Content
-       </main> -->
 
+       <main>
+          Page Content
+          <div id="break-info">
+            <ul id="break-list">
+
+            </ul>
+          </div>
+          <div id="surfer-info">
+            <ul id="surfer-list">
+
+            </ul>
+          </div>
+       </main>
+
+
+           <!-- <script id="surferInfo-template" type="text/x-handlebars-template2">
+             {{#each surfers}}
+
+                 <ul class="emails">
+                   <li id='id' data-id='{{id}}'><a href="user.html">{{id}}</a></li>
+                   <li id='email' data-id='{{id}}'><a href="user.html">{{email}}</a></li>
+                   <li id='state' data-id='{{id}}'><a href="user.html">{{state}}</a></li>
+                 </ul>
+
+             {{/each}}
+          </script> -->
+
+          <script id="break-template" type="text/x-handlebars-template">
+            {{#each breaks}}
+
+                <ul class="break-names">
+                  <li class='breakname' data-id='{{id}}'><a href="user.html">{{name}}</a></li>
+                </ul>
+
+            {{/each}}
+         </script>
 
            <script id="surfer-template" type="text/x-handlebars-template">
              {{#each surfers}}
 
                  <ul class="emails">
-                   <li class='email' data-id='{{id}}'><a href="user.html">{{email}}</a></li>
+                   <li class="email" data-user='{{id}}'><a>{{email}}</a></li>
                  </ul>
 
              {{/each}}

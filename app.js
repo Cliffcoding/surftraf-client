@@ -1,35 +1,74 @@
-const DATABASE_URL = 'http://localhost:3000/api/v1/surfer';
+const SURFERDB_URL = 'http://localhost:3000/api/v1/surfer';
+const BREAKDB_URL = 'http://localhost:3000/api/v1/break';
 
 $(appReady);
 
 function appReady() {
   getSurfers().then(showSurfers);
+  getBreaks().then(showBreaks)
+  //getSurfers().then(showSurferInfo)
 
 }
 
 
 function getSurfers() {
-  return $.get(DATABASE_URL);
+  return $.get(SURFERDB_URL);
+}
+function getBreaks() {
+  return $.get(BREAKDB_URL);
 }
 
 function showSurfers(surfers) {
   const source = $("#surfer-template").html();
-  console.log(source);
+  //console.log(source);
   const template = Handlebars.compile(source);
   const html = template({
     surfers
   });
-  console.log(surfers);
-    console.log(surfers[0].email);
-  //$('main').append(html);
   $('#surfer-list').append(html);
 
 }
 
+function showBreaks(breaks) {
+  const source = $("#break-template").html();
+  //console.log(source);
+  const template = Handlebars.compile(source);
+  const html = template({
+    breaks
+  });
+  $('#break-list').append(html);
+}
+
+// function showSurfersInfo(surfers){
+// $('#surfer-list').on('click', function() {
+//   const source = $("#surferInfo-template").html();
+//   console.log(source);
+//   const template2 = Handlebars.compile(source);
+//   const html = template({
+//     surfer
+//   });
+//   console.log(this);
+//     //console.log(surfers[0].email);
+//   //$('main').append(html);
+//   $('#surfer-info').append(html);
+// })
+// }
+
   $('body').on('click', '.email', function () {
     let text = $(this).text();
-    console.log('hella what. ' + text);
-    
+    console.log($(this).data('id'));
+    $clone = $(this).clone( true )
+    $('#surfer-info').append($clone);
+    //console.log('hella what. ' + text);
+
+    //alert( "Handler for .click() called." );
+  })
+  $('body').on('click', '.name', function () {
+    let text = $(this).text();
+    console.log($(this).data('id'));
+    $('#break-info').append(this);
+    //console.log('hella what. ' + text);
+
     //alert( "Handler for .click() called." );
   })
 
