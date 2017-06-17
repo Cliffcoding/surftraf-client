@@ -21,12 +21,15 @@ function showSurfers(surfers) {
   });
   console.log(surfers);
     console.log(surfers[0].email);
-  $('main').append(html);
+  //$('main').append(html);
+  $('#surfer-list').append(html);
+
 }
 
   $('body').on('click', '.email', function () {
     let text = $(this).text();
     console.log('hella what. ' + text);
+    
     //alert( "Handler for .click() called." );
   })
 
