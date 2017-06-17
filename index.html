@@ -7,17 +7,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   </head>
   <body>
-      <nav>
-       <div class="nav-wrapper container">
-         <form>
-           <div class="input-field">
-             <input id="search" type="search" required>
-             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-             <i class="material-icons">close</i>
-           </div>
-         </form>
-       </div>
-     </nav>
+    <nav class='light-blue'>
+    <div class="nav-wrapper container ">
+      <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Where They At??</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href=""><i data-activates="slide-out" class="material-icons button-collapse show-on-large">more_vert</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul id="slide-out" class="side-nav">
+    <li><div class="userView">
+      <div class="background">
+        <img src="http://www.fillmurray.com/g/140/100">
+      </div>
+      <a href="#!name"><span class="white-text name">John Doe</span></a>
+      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
      <div class="container">
 
        <main>
@@ -28,9 +39,9 @@
            <script id="surfer-template" type="text/x-handlebars-template">
              {{#each surfers}}
 
-                 <div class="emails">
-                   <h3 class='email' data-id='{{id}}'>{{email}}</h3>
-                 </div>
+                 <ul class="emails">
+                   <li class='email' data-id='{{id}}'>{{email}}</li>
+                 </ul>
 
              {{/each}}
           </script>
@@ -38,23 +49,6 @@
 
      </div>
      <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
           <div class="footer-copyright">
             <div class="container">
             © 2014 Copyright Text
@@ -64,6 +58,7 @@
         </footer>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <script src="app.js"></script>
