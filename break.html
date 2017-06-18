@@ -30,45 +30,39 @@
         <ul id="surfer-list">
 
         </ul>
-
       </ul>
     </header>
      <main class="container">
-      <h3>USER PAGE</h3>
+       <h3>BREAK PAGE</h3>
 
-       <main>
-          Page Content
+       <div id="break-surfer-info">
+         <ul id="break-surfer-list">
 
-          <div id="surfer-info">
-            <ul id="surfer-list">
+         </ul>
+       </div>
 
-            </ul>
-          </div>
-       </main>
+    
 
 
-           <!-- <script id="surferInfo-template" type="text/x-handlebars-template2">
-             {{#each surfers}}
+<!-- TAKING TEMPLATES OUT, NEED TO DISPLAY THE BREAK CLICKED! AND THe SURFERS THERE -->
+         <!-- <script id="break-template" type="text/x-handlebars-template">
+           {{#each breaks}}
 
-                 <ul class="emails">
-                   <li id='id' data-id='{{id}}'><a href="user.html">{{id}}</a></li>
-                   <li id='email' data-id='{{id}}'><a href="user.html">{{email}}</a></li>
-                   <li id='state' data-id='{{id}}'><a href="user.html">{{state}}</a></li>
-                 </ul>
+               <ul class="break-names">
+                 <li class='breakname' data-id='{{id}}'><a href="break.html">{{name}}</a></li>
+               </ul>
 
-             {{/each}}
-          </script> -->
-
-
+           {{/each}}
+          </script>
            <script id="surfer-template" type="text/x-handlebars-template">
              {{#each surfers}}
 
                  <ul class="emails">
-                   <li class="email" data-user='{{id}}'><a>{{email}}</a></li>
+                   <li class='email' data-id='{{id}}'><a href="user.html">{{email}}</a></li>
                  </ul>
 
              {{/each}}
-          </script>
+          </script> -->
 
 
      </main>
